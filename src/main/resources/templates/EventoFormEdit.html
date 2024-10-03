@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+  <title>Nuevo Evento</title>
+</head>
+<body>
+<main>
+  <div class="m-5">
+    <h2 class="fw-bold text-center">NUEVO EVENTO</h2>
+    <form class="row g-3 needs-validation m-3" method="post" th:object="${evento}" th:action="@{/app/EventoNuevo}">
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Nombre</label>
+        <input type="text" name="nombre" class="form-control" id="validationCustom01" required>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Fecha</label>
+        <input type="text" name="fecha" class="form-control" id="validationCustom02" required>
+      </div>
+      <div class="col-md-3">
+        <label for="validationCustom05" class="form-label">Asistentes Esperados</label>
+        <input type="text" name="asistentesEsperados" class="form-control" id="validationCustom05" required>
+      </div>
+
+      <div class="col-12">
+        <a th:href="@{/app/Eventos}" class="btn btn-outline-danger">Cancelar</a>
+        <button type="submit" class="btn btn-outline-primary">Registrar Evento</button>
+      </div>
+    </form>
+  </div>
+</main>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
